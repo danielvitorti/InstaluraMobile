@@ -48,17 +48,17 @@ export default class InstaluraMobile extends Component<{}> {
       </ScrollView>
       */
 
-      <FlatList style={{marginTop: 20}}
+      <FlatList style={styles.container}
       data={fotos}
       keyExtractor={item => item.id}
       renderItem={ ({item}) => 
         <View>
-          <View style={{margin:10,flexDirection: 'row', alignItems: 'center'}}>
-          <Image source={require('./resources/img/Desert.jpg')} style={{marginRight:10,borderRadius: 20, width:40, height:40}} />
+          <View style={styles.cabecalho}>
+          <Image source={require('./resources/img/Desert.jpg')} style={styles.fotoDePerfil} />
           </View>
         
           <Text>{item.usuario}</Text>
-          <Image source={require('./resources/img/Desert.jpg')} style={{width:width, height:width}} />
+          <Image source={require('./resources/img/Desert.jpg')} style={styles.foto} />
         </View>
       }
     />
@@ -66,3 +66,25 @@ export default class InstaluraMobile extends Component<{}> {
   }
 }
 
+const styles = StyleSheet.create({
+
+    container:{
+
+        marginTop: 20
+    },
+
+    cabecalho:
+    {
+      margin:10,flexDirection: 'row', alignItems: 'center'
+    },
+
+    fotoDePerfil:
+    {
+        marginRight:10,borderRadius: 20, width:40, height:40
+    },
+    foto:
+    {
+      width:width, height:width
+    }
+
+});
