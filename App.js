@@ -25,11 +25,19 @@ const width = Dimensions.get('screen').width;
 
 export default class InstaluraMobile extends Component<{}> {
   render() {
+    
+        const fotos = [{id:1, usuario: 'daniel'},{id: 2, usuario:'alberto'},{id: 3, usuario:'vitor'}];
+  
+
     return (
-      <View>
-      <Text>Daniel</Text>
-      <Image source={require('./resources/img/Desert.jpg')} style={{width:width,height:width}} />
-      
+
+      <View style={{marginTop: 20}}>
+        {fotos.map(foto => 
+          <View key={foto.id}>
+            <Text>{foto.usuario}</Text>
+            <Image source={require('./resources/img/Desert.jpg')} style={{width:width,height:width}} />
+          </View>
+        )}
       </View>
     );
   }
