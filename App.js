@@ -12,7 +12,8 @@ import {
   View,
   Image,
   Dimensions,
-  ScrollView
+  ScrollView,
+  FlatList
 } from 'react-native';
 
 const instructions = Platform.select({
@@ -31,8 +32,12 @@ export default class InstaluraMobile extends Component<{}> {
         const fotos = [{id:1, usuario: 'daniel'},{id: 2, usuario:'alberto'},{id: 3, usuario:'vitor'}];
   
 
+        
+
+
     return (
 
+      /*
       <ScrollView style={{marginTop: 20}}>
         {fotos.map(foto => 
           <View key={foto.id}>
@@ -41,6 +46,18 @@ export default class InstaluraMobile extends Component<{}> {
           </View>
         )}
       </ScrollView>
+      */
+
+      <FlatList style={{marginTop: 20}}
+      data={fotos}
+      keyExtractor={item => item.id}
+      renderItem={ ({item}) => 
+        <View>
+          <Text>{item.usuario}</Text>
+          <Image source={require('./resources/img/Desert.jpg')} style={{width:width, height:width}} />
+        </View>
+      }
+    />
     );
   }
 }
