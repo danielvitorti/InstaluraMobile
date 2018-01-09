@@ -53,6 +53,10 @@ export default class InstaluraMobile extends Component<{}> {
       keyExtractor={item => item.id}
       renderItem={ ({item}) => 
         <View>
+          <View style={{margin:10,flexDirection: 'row', alignItems: 'center'}}>
+          <Image source={require('./resources/img/Desert.jpg')} style={{marginRight:10,borderRadius: 20, width:40, height:40}} />
+          </View>
+        
           <Text>{item.usuario}</Text>
           <Image source={require('./resources/img/Desert.jpg')} style={{width:width, height:width}} />
         </View>
